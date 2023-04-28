@@ -38,7 +38,7 @@ from scipy.spatial.distance import pdist
 from skimage.io import imshow, show
 from skimage.color import label2rgb
 from skimage.measure._find_contours import find_contours
-from skimage.measure._marching_cubes_lewiner import marching_cubes_lewiner as marching_cubes
+from skimage.measure._marching_cubes_lewiner import _marching_cubes_lewiner as marching_cubes
 from skimage.measure import regionprops
 from skimage.segmentation import find_boundaries
 from skimage.morphology import skeletonize, dilation, square
