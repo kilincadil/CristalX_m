@@ -62,20 +62,20 @@ from skan import Skeleton, summarize
 from skan.draw import overlay_skeleton_networkx
 
 try:
-    from OCC.gp import gp_Pnt
-    from OCC.TColgp import TColgp_Array1OfPnt
-    from OCC.GeomAPI import GeomAPI_PointsToBSpline
-    from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeFace, BRepBuilderAPI_MakeEdge, \
+    from OCC.Core.gp import gp_Pnt
+    from OCC.Core.TColgp import TColgp_Array1OfPnt
+    from OCC.Core.GeomAPI import GeomAPI_PointsToBSpline
+    from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeFace, BRepBuilderAPI_MakeEdge, \
         BRepBuilderAPI_MakeWire
-    from OCC.TopoDS import TopoDS_Compound
-    from OCC.BRep import BRep_Builder
-    from OCC.TopTools import TopTools_ListOfShape
-    from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut, BRepAlgoAPI_Fuse
-    from OCC.GProp import GProp_GProps
-    from OCC.BRepGProp import brepgprop_SurfaceProperties
-    from OCC.STEPControl import STEPControl_Writer, STEPControl_AsIs
-    from OCC.Interface import Interface_Static_SetCVal
-    from OCC.IFSelect import IFSelect_RetDone
+    from OCC.Core.TopoDS import TopoDS_Compound
+    from OCC.Core.BRep import BRep_Builder
+    from OCC.Core.TopTools import TopTools_ListOfShape
+    from OCC.Core.BRepAlgoAPI import BRepAlgoAPI_Cut, BRepAlgoAPI_Fuse
+    from OCC.Core.GProp import GProp_GProps
+    from OCC.Core.BRepGProp import brepgprop_SurfaceProperties
+    from OCC.Core.STEPControl import STEPControl_Writer, STEPControl_AsIs
+    from OCC.Core.Interface import Interface_Static_SetCVal
+    from OCC.Core.IFSelect import IFSelect_RetDone
     from OCC.Display.SimpleGui import init_display
     from OCC.Display.OCCViewer import rgb_color
 except:
