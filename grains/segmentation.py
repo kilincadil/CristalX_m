@@ -18,7 +18,7 @@ import numpy as np
 import scipy.ndimage as ndi
 from scipy.ndimage.morphology import distance_transform_edt
 from skimage import io, segmentation, color, measure
-from skimage.future import graph
+from skimage import graph
 from skimage.morphology import skeletonize
 from skimage.segmentation import watershed
 
