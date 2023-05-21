@@ -158,7 +158,7 @@ class Segmentation:
 
         if self.__stored_graph is None:
             # Region Adjacency Graph (RAG) not yet determined -> compute it
-            g = graph.rag_mean_color(self.original_image, segmented_image)
+            g = graph.rag.rag_mean_color(self.original_image, segmented_image)
             self.__stored_graph = g
         else:
             g = self.__stored_graph
