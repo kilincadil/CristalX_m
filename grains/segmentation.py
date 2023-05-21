@@ -249,7 +249,29 @@ class Segmentation:
             print('Watershed segmentation finished. '
                   'Number of segments: {0}'.format(np.amax(segmented)))
         return segmented
+        def voronoi(self, image_matrix=None, edge_exclusion_parameter=False):
+        if image_matrix is None:
+            image = self.original_image
+            io.imshow(image)
+        else:
+            image = image_matrix
+        if image.shape[2] == 4:
+            image = color.rgba2rgb(self.original_image)
+        input_image = img_as_ubyte(color.rgb2gray(image))
+    
+        input_inverted = np.invert(input_image)
+        binary = cle.binary_not(cle.threshold_otsu(input_inverted))
+        labeled_image = cle.voronoi_labeling(binary)
+        if edge_exclusion_parameter:
+            labeled_image = cle.exclude_labels_on_edges(labeled_image)
+        if self.__interactive_mode:
+             io.imshow(labeled_image)
+             io.show()
+             print(type(labeled_image))
 
+        return labeled_image
+
+    
     def save_image(self, filename, array, is_label_image=False):
         """Save an image as a numpy array.
         The array is saved in the standard numpy format, into the directory determined by the
